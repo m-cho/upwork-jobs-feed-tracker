@@ -10,10 +10,10 @@ Feedback and contribute are highly appreciated!
 
 ## Warning to freelancers
 **This extension retrieves items from your personal job feed**.  
-If you are new freelancer on the platform, you might have empty  
-jobs feed at the beginning. To personalize your job feed you have to  
-make regular jobs search with some criteria like keyword or  
-minimum budget and then save it (see screenshot)
+If you are new freelancer on the platform, you might have empty jobs feed at the beginning.
+
+To personalize your job feed you have to make regular jobs search  
+with some criteria like keyword or minimum budget and then save it (see screenshot)
 
 ![alt tag](https://raw.githubusercontent.com/neeilya/upwork-jobs-feed-tracker/master/search.png)
 
@@ -21,25 +21,27 @@ minimum budget and then save it (see screenshot)
 
 - Native Chrome notifications (now with sound)
 - Configurable frequency of jobs checking requests
-- Immediate access to fresh jobs
-- *Todo:* Customizable search filters
+- Immediate access to projects posted recently
 
 ## Tools and libraries used
 
-- [Vuejs](https://github.com/vuejs)
-- [Webpack](https://github.com/webpack/webpack)
-- [Babel loader for ES6 features](https://babeljs.io/)
-- [Moment.js](http://momentjs.com/)
+- [React](https://github.com/facebook/react)
+- [Redux](https://github.com/reduxjs/redux)
+- [Material UI](https://material-ui.com)
+- [Chrome extension react starter kit](https://github.com/hk-skit/chrome-extension-starter-kit)
+- [Eslint](https://eslint.org/) (Airbnb style is applied with some adjustments)
 
 ## Build and contribute instructions
 
-Dependencies: global **npm** and **webpack**
-- Download the package
-- Run `npm install`
-- Run `webpack` (public directory should appear in the root of the project)
+Dependencies: **yarn**
+- Clone the repo
+- Run `yarn` in project root directory
+- Run `yarn watch` (`build` directory should appear)
 - Go to Chrome -> extensions (type in address bar `chrome://extensions`)
 - Press *Load unpacked extension*
-- Choose public directory
+- Choose `build` directory
+
+Hot reloading is enabled for this project (thanks [@hk-skit](https://github.com/hk-skit))
 
 ## License
 
