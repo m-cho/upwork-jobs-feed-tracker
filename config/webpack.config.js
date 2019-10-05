@@ -450,6 +450,18 @@ module.exports = function(webpackEnv) {
                 'sass-loader'
               )
             },
+            {
+              test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+              use: [
+                {
+                  loader: require.resolve('file-loader'),
+                  options: {
+                    name: '[name].[ext]',
+                    outputPath: 'assets/fonts/'
+                  }
+                }
+              ]
+            },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
             // In production, they would get copied to the `build` folder.
