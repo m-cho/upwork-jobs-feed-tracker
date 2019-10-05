@@ -7,7 +7,6 @@ import {
 
 import Popup from '../../views/Popup/Popup';
 import Options from '../../views/Options/Options';
-import './App.css';
 
 const App = () => (
   <Router>
