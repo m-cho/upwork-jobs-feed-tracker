@@ -24,3 +24,9 @@ body {
   src: url('assets/fonts/medium.ttf');
   font-weight: 500
 }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/bold.ttf');
+  font-weight: 700
+}
