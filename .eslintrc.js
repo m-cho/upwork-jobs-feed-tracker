@@ -25,11 +25,20 @@ module.exports = {
     "react/jsx-max-props-per-line": ["error", { "maximum": 1, "when": "always" }],
     "func-style": ["error", "expression"],
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "comma-dangle": ["error", { "functions": "never" }],
+    "function-paren-newline": 0,
     "operator-linebreak": 0,
-    "import/prefer-default-export": false,
+    "import/prefer-default-export": 0,
     "implicit-arrow-linebreak": 0,
     "no-underscore-dangle": 0,
-    "object-curly-newline": 0,
+    "object-curly-newline": ["error", {
+      "ObjectExpression": { "multiline": true, "minProperties": 3 },
+      "ObjectPattern": { "multiline": true },
+      "ImportDeclaration": { "multiline": true, "minProperties": 3 },
+      "ExportDeclaration": { "multiline": true, "minProperties": 3 }
+    }],
     "react/forbid-prop-types": 0,
+    "no-confusing-arrow": 0,
+    "arrow-parens": ["error", "as-needed"],
   },
 };
