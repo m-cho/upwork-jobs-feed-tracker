@@ -39,14 +39,15 @@ export const clearNotifications = () =>
       .map(removeNotification)
   );
 
-export const createNotification = ({ title, message }) =>
+export const createNotification = ({ title, message, contextMessage }) =>
   chrome.notifications.create(
     uuid(),
     {
       type: 'basic',
       iconUrl: './icon.png',
       title,
-      message
+      message,
+      contextMessage
     }
   );
 
