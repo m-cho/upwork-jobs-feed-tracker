@@ -162,9 +162,7 @@ module.exports = function(webpackEnv) {
       // In development, it does not produce real files.
       filename: chunkData => {
         if (chunkData.chunk.name === 'app')
-          return isEnvProduction
-            ? 'static/js/[name].js'
-            : isEnvDevelopment && 'static/js/bundle.js';
+            return 'static/js/app.js';
         return `[name].js`;
       },
 
@@ -500,7 +498,7 @@ module.exports = function(webpackEnv) {
         Object.assign(
           {},
           {
-            inject: true,
+            inject: false,
             template: paths.appHtml
           },
           isEnvProduction
@@ -624,12 +622,13 @@ module.exports = function(webpackEnv) {
       // Chrome extension hot reloading.
       isEnvDevelopment &&
         new ChromeExtensionReloader({
-          reloadPage: true // Force the reload of the page also
-          // entries: {
-          //   // The entries used for the content/background scripts
-          //   contentScript: 'content-script', // Use the entry names, not the file name or the path
-          //   background: 'app' // *REQUIRED
-          // }
+          // Force the reload of the page also
+          reloadPage: true,
+          entries: {
+            // The entries used for the content/background scripts
+            contentScript: 'content-script', // Use the entry names, not the file name or the path
+            background: 'background' // *REQUIRED
+          }
         })
     ].filter(Boolean),
     // Some libraries import Node modules but don't use them in the browser.
