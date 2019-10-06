@@ -20,7 +20,7 @@ export const loadState = () => {
  * Save state into storage
  * @param state
  */
-export const saveState = (state) => {
+export const saveState = state => {
   try {
     localStorage.setItem(stateKey, JSON.stringify(state));
   } catch (err) {

@@ -2,7 +2,7 @@ import React from 'react';
 import {
   HashRouter as Router,
   Switch,
-  Route,
+  Route
 } from 'react-router-dom';
 
 import Popup from '../../views/Popup/Popup';
