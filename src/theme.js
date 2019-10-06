@@ -2,7 +2,7 @@ export const colors = {
   accentPrimary: '#4CAF50',
   accentPrimaryDark: '#43A047',
   accentPrimaryLight: '#66BB6A',
-  accentPrimaryLightest: '#81C784',
+  accentPrimaryLightest: '#81C784'
 };
 
 export const palette = {

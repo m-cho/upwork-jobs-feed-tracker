@@ -1,18 +1,31 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   HashRouter as Router,
   Switch,
   Route
 } from 'react-router-dom';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 import Popup from '../../views/Popup/Popup';
 import Options from '../../views/Options/Options';
-import { theme } from '../../theme';
+import { theme as baseTheme } from '../../theme';
+import { sGetDarkMode } from '../../store/reducers/settings';
 
-const App = () => (
-  <MuiThemeProvider theme={createMuiTheme(theme)}>
+const theme = darkMode => ({
+  ...baseTheme,
+  palette: {
+    ...baseTheme.palette,
+    type: darkMode
+      ? 'dark'
+      : 'light'
+  }
+});
+
+const App = ({ darkMode }) => (
+  <MuiThemeProvider theme={createMuiTheme(theme(darkMode))}>
     <CssBaseline>
       <Router>
         <Switch>
@@ -28,4 +41,8 @@ const App = () => (
   </MuiThemeProvider>
 );
 
-export default App;
+App.propTypes = { darkMode: PropTypes.bool.isRequired };
+
+const mapStateToProps = state => ({ darkMode: sGetDarkMode(state) });
+
+export default connect(mapStateToProps, {})(App);
