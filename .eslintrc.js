@@ -23,6 +23,7 @@ module.exports = {
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
     "react/prefer-stateless-function": ["error", { "ignorePureComponents": false }],
     "react/jsx-max-props-per-line": ["error", { "maximum": 1, "when": "always" }],
+    "react/jsx-props-no-spreading": 0,
     "func-style": ["error", "expression"],
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "comma-dangle": ["error", { "functions": "never" }],
