@@ -6,7 +6,7 @@ export const keepAuthenticated = () =>
     .then(response => [null, response])
     .catch(error => [error, null]);
 
-export const getProjects = async () => {
+export const getJobs = async () => {
   await keepAuthenticated();
 
   return axios

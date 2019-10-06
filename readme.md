@@ -21,7 +21,7 @@ with some criteria like keyword or minimum budget and then save it (see screensh
 
 - Native Chrome notifications (now with sound)
 - Configurable frequency of jobs checking requests
-- Immediate access to projects posted recently
+- Immediate access to jobs posted recently
 
 ## Tools and libraries used
 

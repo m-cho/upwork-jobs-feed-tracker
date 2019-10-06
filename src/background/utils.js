@@ -1,18 +1,18 @@
 import { createNotification } from '../utils/chrome';
-import { sGetUnseenProjects } from '../store/reducers/projects';
+import { sGetUnseenJobs } from '../store/reducers/jobs';
 import { sGetAuth } from '../store/reducers/auth';
 
 export const showNotification = state => {
   const isAuthenticated = sGetAuth(state);
-  const unseenProjects = sGetUnseenProjects(state);
+  const unseenJobs = sGetUnseenJobs(state);
 
   return !isAuthenticated
     ? null
-    : unseenProjects.length &&
+    : unseenJobs.length &&
       createNotification({
-        title: unseenProjects.length === 1
-          ? 'New project has just been posted! 🔥🔥🔥'
-          : `${unseenProjects.length} new projects have been posted 🙌`,
+        title: unseenJobs.length === 1
+          ? 'New job has just been posted! 🔥🔥🔥'
+          : `${unseenJobs.length} new jobs have been posted 🙌`,
         message: 'Be first to apply! 👊'
       });
 };

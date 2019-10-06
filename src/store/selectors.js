@@ -1,7 +1,7 @@
 import { sGetAuth } from './reducers/auth';
-import { sGetUnseenProjects } from './reducers/projects';
+import { sGetUnseenJobs } from './reducers/jobs';
 
 export const sGetBadgeText = state =>
   sGetAuth(state)
-    ? sGetUnseenProjects(state).length
+    ? sGetUnseenJobs(state).length
     : 'err';
