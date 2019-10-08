@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import ListItem from '@material-ui/core/ListItem';
+import { Typography } from '@material-ui/core';
 
 const SettingsItem = ({ label, children, labelStyle }) => (
   <ListItem>
@@ -13,13 +14,15 @@ const SettingsItem = ({ label, children, labelStyle }) => (
       justify="space-between"
     >
       <Grid item>
-        <Box
-          fontSize={15}
-          fontWeight={500}
-          style={labelStyle}
-        >
-          {label}
-        </Box>
+        <Typography color="textSecondary">
+          <Box
+            fontSize={15}
+            fontWeight={500}
+            style={labelStyle}
+          >
+              {label}
+          </Box>
+        </Typography>
       </Grid>
       <Grid item>
         {children}
