@@ -1,5 +1,8 @@
 const styles = {
-  container: { padding: '12px 12px 14px 15px' },
+  container: {
+    borderRadius: 0,
+    padding: '12px 12px 14px 15px'
+  },
   logoContainer: {
     display: 'flex',
     alignItems: 'center',

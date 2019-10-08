@@ -6,9 +6,10 @@ import React, {
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
 
 import { sGetAuth } from '../../store/reducers/auth';
 import { sGetUnseenJobs } from '../../store/reducers/jobs';
@@ -43,9 +44,9 @@ const Popup = ({
   ]);
 
   return (
-    <div
-      style={{ width: containerWidth }}
+    <Paper
       className={classes.container}
+      style={{ width: containerWidth }}
     >
       <Grid
         container
@@ -67,10 +68,11 @@ const Popup = ({
           className={classes.textContainer}
           item
         >
-          <Typography
-            className={classes.typography}
-            color="textSecondary"
+          <Box
             fontWeight={700}
+            fontSize={15}
+            color="textSecondary"
+            className={classes.typography}
           >
             {
               isAuthenticated &&
@@ -86,10 +88,10 @@ const Popup = ({
               !isAuthenticated &&
               <UnauthenticatedText />
             }
-          </Typography>
+          </Box>
         </Grid>
       </Grid>
-    </div>
+    </Paper>
   );
 };
 
