@@ -1,22 +1,18 @@
 const defaultStore = {
+  darkMode: false,
+  soundEnabled: true,
   fetchingInterval: 1,
-  darkMode: true
+  fetchingEnabled: true,
 };
 
-export const SETTINGS_SET_DARK_MODE = 'SETTINGS_SET_DARK_MODE';
-export const SETTINGS_SET_FETCHING_INTERVAL = 'SETTINGS_SET_FETCHING_INTERVAL';
+export const SETTINGS_UPDATE = 'SETTINGS_UPDATE';
 
 export default (state = defaultStore, action) => {
   switch (action.type) {
-    case SETTINGS_SET_DARK_MODE:
+    case SETTINGS_UPDATE:
       return {
         ...state,
-        darkMode: action.payload
-      };
-    case SETTINGS_SET_FETCHING_INTERVAL:
-      return {
-        ...state,
-        fetchingInterval: action.payload
+        ...action.payload
       };
     default:
       return state;
