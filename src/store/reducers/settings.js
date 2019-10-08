@@ -26,3 +26,6 @@ export const sGetFetchingInterval = state =>
 
 export const sGetDarkMode = state =>
   sGetSettings(state).darkMode;
+
+export const sGetFetchingEnabled = state =>
+  sGetSettings(state).fetchingEnabled;

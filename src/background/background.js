@@ -1,4 +1,3 @@
-import store from '../store';
 import {
   onAlarm,
   createAlarm,
@@ -7,6 +6,7 @@ import {
   clearNotifications,
   onNotificationClick
 } from '../utils/chrome';
+import store from '../store';
 import { getJobs } from '../api';
 import { showNotification } from './utils';
 import { openOptionsPage } from '../utils';
@@ -15,14 +15,15 @@ import { sGetAuth } from '../store/reducers/auth';
 import { sGetBadgeText } from '../store/selectors';
 import { badgeColor, jobsAlarmKey } from '../globals';
 import { sGetUnsuggestedJobs } from '../store/reducers/jobs';
-import { sGetFetchingInterval } from '../store/reducers/settings';
 import { acJobsAdd, acJobsSetSuggested } from '../store/actions/jobs';
+import { sGetFetchingEnabled, sGetFetchingInterval } from '../store/reducers/settings';
 
 const getState = () => store.getState();
 // wrap in functions to ensure we always have the latest state
 const isAuthenticated = () => sGetAuth(getState());
-const fetchingInterval = () => sGetFetchingInterval(getState());
 const unsuggestedJobs = () => sGetUnsuggestedJobs(getState());
+const fetchingInterval = () => sGetFetchingInterval(getState());
+const isFetchingEnabled = () => sGetFetchingEnabled(getState());
 
 const fetchJobs = async () => {
   const [error, jobs] = await getJobs();
@@ -47,7 +48,10 @@ const initialize = () => {
   setBadgeColor(badgeColor);
   setBadgeText(sGetBadgeText(getState()));
 
-  if (isAuthenticated()) {
+  if (
+    isAuthenticated() &&
+    isFetchingEnabled()
+  ) {
     createAlarm(jobsAlarmKey, fetchingInterval());
     fetchJobs();
   }
