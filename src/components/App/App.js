@@ -11,21 +11,11 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 import Popup from '../../views/Popup/Popup';
 import Options from '../../views/Options/Options';
-import { theme as baseTheme } from '../../theme';
+import { getTheme } from '../../theme';
 import { sGetDarkMode } from '../../store/reducers/settings';
 
-const theme = darkMode => ({
-  ...baseTheme,
-  palette: {
-    ...baseTheme.palette,
-    type: darkMode
-      ? 'dark'
-      : 'light'
-  }
-});
-
 const App = ({ darkMode }) => (
-  <MuiThemeProvider theme={createMuiTheme(theme(darkMode))}>
+  <MuiThemeProvider theme={createMuiTheme(getTheme(darkMode))}>
     <CssBaseline>
       <Router>
         <Switch>
