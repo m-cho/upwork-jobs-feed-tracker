@@ -36,12 +36,9 @@ export const Settings = ({
     <Card className={classes.card}>
       <List>
         <ListItem>
-          <Box
-            fontSize={18}
-            marginBottom={1}
-          >
+          <h2 className={classes.title}>
             Settings
-          </Box>
+          </h2>
         </ListItem>
         <SettingsItem label={"Enable fetching"}>
           <Switch

@@ -14,9 +14,9 @@ export const colors = {
 export const palette = {
   primary: {
     main: colors.accentPrimary,
-    dark: colors.accentPrimaryDark,
-    light: colors.accentPrimaryLight,
-    lightest: colors.accentPrimaryLightest
+  },
+  secondary: {
+    main: colors.accentPrimaryLight
   }
 };
 

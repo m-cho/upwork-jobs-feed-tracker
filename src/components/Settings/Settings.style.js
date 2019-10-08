@@ -1,7 +1,10 @@
 const styles = {
+  title: {
+    marginTop: 0
+  },
   card: {
     position: 'fixed',
-    width: '290px'
+    width: '300px'
   },
   divider: {
     margin: '5px 0',
