@@ -19,7 +19,7 @@ import UnauthenticatedText from './UnauthenticatedText';
 import styles from './Popup.style';
 
 const defaultWidth = 320;
-const safeWidth = 21; // includes spacing, etc.
+const safeWidth = 22; // includes spacing, etc.
 
 const Popup = ({
   classes,
