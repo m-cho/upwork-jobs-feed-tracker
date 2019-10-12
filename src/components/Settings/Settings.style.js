@@ -1,4 +1,6 @@
-const styles = {
+import { createStyles } from '@material-ui/core';
+
+const styles = theme => createStyles({
   title: {
     marginTop: 0
   },
@@ -11,9 +13,12 @@ const styles = {
   },
   select: {
     position: 'relative',
-    bottom: '1px',
-    fontWeight: 500
+    bottom: '3px',
+    fontWeight: 500,
+  },
+  selectInput: {
+    color: theme.palette.text.secondary
   }
-};
+});
 
 export default styles;

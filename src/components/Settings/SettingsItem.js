@@ -17,6 +17,7 @@ const SettingsItem = ({ label, children, labelStyle }) => (
         <Typography color="textSecondary">
           <Box
             fontSize={15}
+            component="span"
             fontWeight={500}
             style={labelStyle}
           >

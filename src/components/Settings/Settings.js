@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 import Card from '@material-ui/core/Card';
 import Divider from '@material-ui/core/Divider';
@@ -54,15 +54,15 @@ export const Settings = ({
           className={classes.divider}
         />
         {fetchingEnabled && (
-          <SettingsItem
-            labelStyle={{ paddingTop: '3px' }}
-            label="Fetching interval"
-          >
+          <SettingsItem label="Fetching interval">
             <Select
               displayEmpty
               disableUnderline
               value={fetchingInterval}
               className={classes.select}
+              inputProps={{
+                className: classes.selectInput
+              }}
               onChange={e =>
                 updateSettings('fetchingInterval', e.target.value)
               }
@@ -72,7 +72,9 @@ export const Settings = ({
                   value={interval}
                   key={`settings-interval-${interval}`}
                 >
-                  {interval} minute
+                  {interval}&nbsp;
+                  minute
+                  {interval > 1 ? 's' : ''}
                 </MenuItem>
               )}
             </Select>
@@ -85,7 +87,7 @@ export const Settings = ({
               color="primary"
               checked={soundEnabled}
               onChange={() =>
-                updateSettings('soundEnable', !soundEnabled)
+                updateSettings('soundEnabled', !soundEnabled)
               }
             />
           </SettingsItem>
