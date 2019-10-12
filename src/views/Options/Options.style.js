@@ -1,7 +1,7 @@
 const styles = {
   rootContainer: {
     minWidth: '960px',
-    padding: '50px 0',
+    padding: '50px 0 300px',
     position: 'relative'
   },
   jobsContainer: {

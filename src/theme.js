@@ -4,7 +4,7 @@ export const colors = {
   accentPrimaryLight: '#66BB6A',
   accentPrimaryLightest: '#81C784',
 
-  darkGrey: '#525252',
+  darkGrey: '#4e4e4e',
   white: '#fff',
 
   backgroundDark: '#303030',
