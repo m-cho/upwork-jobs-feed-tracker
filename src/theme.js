@@ -4,8 +4,12 @@ export const colors = {
   accentPrimaryLight: '#66BB6A',
   accentPrimaryLightest: '#81C784',
 
-  darkGrey: '#4e4e4e',
+  greyDark: '#4e4e4e',
+  greyLight: '#575757',
+  greyLighter: '#dedede',
+
   white: '#fff',
+  whiteDarker: '#cecece',
 
   backgroundDark: '#303030',
   backgroundLight: '#e2e2e2'
@@ -17,7 +21,7 @@ export const palette = {
   },
   secondary: {
     main: colors.accentPrimaryLight
-  }
+  },
 };
 
 export const typography = {
@@ -41,9 +45,15 @@ export const getTheme = darkMode => ({
       : 'light',
     text: {
       ...baseTheme.text,
+      secondaryLight: darkMode
+        ? colors.greyDark
+        : colors.greyLighter,
+      secondary: darkMode
+        ? colors.whiteDarker
+        : colors.greyLight,
       primary: darkMode
         ? colors.white
-        : colors.darkGrey
+        : colors.greyDark
     },
     background: {
       ...baseTheme.palette.background,
