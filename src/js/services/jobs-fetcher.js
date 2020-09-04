@@ -53,9 +53,9 @@ export default {
                     iconUrl: './notification-icon.png',
                     title: 'You got ' + freshJobs.length + ' new jobs!',
                     message: "Don't miss your chance",
-                    buttons: [{
-                        title: "Click here to take a look"
-                    }]
+                    // buttons: [{
+                    //     title: "Click here to take a look"
+                    // }]
                 });
 
                 if(!!JSON.parse(config.getPlayNotificationSound())) {

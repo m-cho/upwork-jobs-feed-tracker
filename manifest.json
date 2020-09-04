@@ -14,7 +14,7 @@
 		"default_popup": "popup.html"
 	},
 	"background": {
-		"persistent": false,
+		"persistent": true,
 		"scripts": [
 			"background.js"
 		]
@@ -26,5 +26,7 @@
 		"storage",
 		"https://www.upwork.com/"
 	],
-	"options_page": "options.html"
+	"options_ui": {
+		"page": "options.html"
+	}
 }

@@ -27,11 +27,22 @@ chrome.alarms.onAlarm.addListener(({ name }) => {
     jobsFetcher.fetchAndNotify();
 });
 
-chrome.notifications.onButtonClicked.addListener(notificationId => {
-    if((notificationId + '').substr(0,9) !== 'freshJobs') {
-        return;
-    }
-
-    chrome.tabs.create({'url': "/options.html" });
-    chrome.notifications.clear(notificationId);
-});
+if (typeof browser === 'undefined') {
+    chrome.notifications.onButtonClicked.addListener(notificationId => {
+        if((notificationId + '').substr(0,9) !== 'freshJobs') {
+            return;
+        }
+    
+        chrome.tabs.create({'url': "/options.html" });
+        chrome.notifications.clear(notificationId);
+    });
+} else {
+    browser.notifications.onClicked.addListener(notificationId => {
+        if((notificationId + '').substr(0,9) !== 'freshJobs') {
+            return;
+        }
+    
+        browser.tabs.create({'url': "/options.html" });
+        browser.notifications.clear(notificationId);
+    });
+}
